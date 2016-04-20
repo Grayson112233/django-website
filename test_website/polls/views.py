@@ -7,7 +7,7 @@ from .models import Question, Choice
 # This method will handle responses to the index page
 
 def index(request):
-    # List 5 most recent posts delineated by a comma
+	# List 5 most recent posts delineated by a comma
 	latest_questions = Question.objects.order_by('-pub_date')[:5]
 	context = { 'latest_questions': latest_questions }
 	return render(request, 'polls/index.html', context)
